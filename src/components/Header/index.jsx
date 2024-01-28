@@ -1,24 +1,42 @@
 import { Container, Profile } from "./style";
-import { Input } from "../../components/Input";
-import { FiSearch } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/auth";
+import { api } from "../../services/api";
+import avatarPlaceholder from "../../assets/avatar.svg";
 
-export function Header() {
+export function Header({ children }) {
+	const { signOut, user } = useAuth();
+	const navigate = useNavigate();
+
+	const avatarUrl = user.avatar
+		? `${api.defaults.baseURL}/files/${user.avatar}`
+		: avatarPlaceholder;
+
+	function handleSignOut() {
+		signOut();
+		navigate("/");
+	}
+
+	function handleProfile() {
+		navigate("/profile");
+	}
+
 	return (
 		<Container>
 			<h1>RocketMovies</h1>
 
-			{/* {children} */}
-			<Input placeholder="Pesquise pelo título do filme" icon={FiSearch} />
+			{children}
 
-			<Profile to="/profile">
+			<Profile>
 				<div>
-					<strong>Vinicius</strong>
-					<span>sair</span>
+					<strong>{user.name}</strong>
+					<button onClick={handleSignOut}>
+						<span>sair</span>
+					</button>
 				</div>
-				<img
-					src="https://github.com/ViniciusAssis01.png"
-					alt="Foto do usuario"
-				/>
+				<button onClick={handleProfile}>
+					<img src={avatarUrl} alt={`Foto do usuario ${user.name}`} />
+				</button>
 			</Profile>
 		</Container>
 	);

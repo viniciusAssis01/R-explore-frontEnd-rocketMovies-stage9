@@ -3,9 +3,19 @@ import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { Form, StyledDiv, Background } from "./style";
 import { Link } from "react-router-dom";
-import { Header } from "../../components/Header";
+
+import { useAuth } from "../../hooks/auth";
+import { useState } from "react";
 
 export function SigIn() {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const { signIn } = useAuth();
+
+	function handleSignIn() {
+		signIn({ email, password });
+	}
+
 	return (
 		<StyledDiv>
 			<Form>
@@ -14,11 +24,21 @@ export function SigIn() {
 
 				<h2>Faça seu login</h2>
 
-				<Input placeholder="E-mail" type="text" icon={FiMail} />
+				<Input
+					placeholder="E-mail"
+					type="text"
+					icon={FiMail}
+					onChange={(e) => setEmail(e.target.value)}
+				/>
 
-				<Input placeholder="Senha" type="password" icon={FiLock} />
+				<Input
+					placeholder="Senha"
+					type="password"
+					icon={FiLock}
+					onChange={(e) => setPassword(e.target.value)}
+				/>
 
-				<Button title="Entrar" />
+				<Button title="Entrar" onClick={handleSignIn} />
 
 				<Link to="/register">Criar conta</Link>
 			</Form>

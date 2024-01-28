@@ -19,12 +19,10 @@ export const StyledContainer = styled.div`
 			gap: 20px;
 
 			&::-webkit-scrollbar {
-				//o trilho da barra
 				width: 8px;
 				background-color: transparent;
 			}
 			&::-webkit-scrollbar-thumb {
-				//a barra em si
 				background-color: ${({ theme }) => theme.COLORS.PINK};
 				border-radius: 8px;
 			}

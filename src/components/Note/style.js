@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const StyledNote = styled(Link)`
+export const StyledNote = styled.button`
 	width: 100%;
 	background-color: ${({ theme }) => theme.COLORS.PINKLIGHT};
 
@@ -9,7 +8,6 @@ export const StyledNote = styled(Link)`
 	border-radius: 16px;
 
 	padding: 32px;
-	/* margin-bottom: 20px; */
 
 	display: flex;
 	flex-direction: column;
@@ -39,15 +37,5 @@ export const ContainerTitle = styled.div`
 		font-weight: 700;
 		color: ${({ theme }) => theme.COLORS.WHITE};
 		text-align: left;
-	} 
-	/* .stars {
-		align-self: flex-start;
-		display: flex;
-		gap: 6px;
-
-		svg {
-			font-size: 16px;
-			color: ${({ theme }) => theme.COLORS.PINK};
-		} */
 	}
 `;

@@ -35,12 +35,30 @@ export const StyledDetails = styled.div`
 
 export const Title = styled.div`
 	display: flex;
-	justify-content: start;
+	justify-content: space-between;
 	align-items: center;
-	gap: 20px;
-	h1 {
-		font-size: 36px;
-		font-weight: 500;
+
+	div {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 20px;
+		h1 {
+			font-size: 36px;
+			font-weight: 500;
+		}
+	}
+
+	button {
+		padding: 13px 32px;
+		background-color: ${({ theme }) => theme.COLORS.PINK};
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		border-radius: 8px;
+		color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+		border-color: transparent;
 	}
 `;
 

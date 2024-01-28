@@ -32,9 +32,6 @@ export const Container = styled.div`
 export const Form = styled.form`
 	max-width: 340px;
 	margin: 30px auto 0;
-	/* >div: nth-child(4) {
-		margin-top: 24px;
-	} */
 
 	.containerInputs {
 		display: flex;

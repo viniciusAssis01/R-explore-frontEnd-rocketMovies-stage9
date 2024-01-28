@@ -28,6 +28,13 @@ export const Form = styled.form`
 		margin: 48px 0;
 	}
 
+	> div {
+		margin-bottom: 8px;
+	}
+	> button {
+		margin-top: 16px;
+	}
+
 	> p {
 		align-self: flex-start;
 		font-size: 14px;

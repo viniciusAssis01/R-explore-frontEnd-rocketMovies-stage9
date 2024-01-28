@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const StyledArrowBack = styled(Link)`
-	background-color: ${({ theme }) => theme.COLORS.ORANGE};
+export const StyledArrowBack = styled.button`
+	background: none;
 	color: ${({ theme }) => theme.COLORS.PINK};
 	border: none;
 
