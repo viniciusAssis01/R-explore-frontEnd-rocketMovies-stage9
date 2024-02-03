@@ -36,7 +36,6 @@ export const Description = styled.div`
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-
 	a {
 		padding: 13px 32px;
 		background-color: ${({ theme }) => theme.COLORS.PINK};
