@@ -5,7 +5,14 @@ export const StyledStars = styled.div`
 	gap: 6px;
 
 	svg {
-		font-size: 16px;
-		color: ${({ theme }) => theme.COLORS.PINK};
+		width: 16px;
+		height: 16px;
+		/* 		font-size: 16px; */
+	}
+
+	svg:nth-child(-n + 4) {
+		/* color: ${({ theme }) => theme.COLORS.PINK}; */
+		/* stroke: ${({ theme }) => theme.COLORS.PINK}; */
+		fill: ${({ theme }) => theme.COLORS.PINK};
 	}
 `;

@@ -7,10 +7,11 @@ export function Note({ data, ...rest }) {
 		<StyledNote {...rest}>
 			<ContainerTitle>
 				<h1>{data.title}</h1>
-				<Stars />
+				<Stars rating={data.rating} />
 			</ContainerTitle>
 
-			<p>{data.description}</p>
+			<p>{`${data.description.substring(0, 254)}...`}</p>
+			{/* limitar a quantidade de caracteres */}
 
 			{data.tags && (
 				<footer>
